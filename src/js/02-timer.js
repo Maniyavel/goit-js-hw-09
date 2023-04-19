@@ -10,14 +10,14 @@ const dataSeconds=document.querySelector('[data-seconds]');
 let intervalId = null;
 
 button.setAttribute('disabled', 'disabled');
-button.addEventListener('click', onClick);
+button.addEventListener('click', onPress);
 
 
 
-const onClick=()=>{
+const onPress=()=>{
   intervalId=setInterval(()=>{
     const currentDate=new Date(input.value);
-    const time=currentDate-Date.now();
+    const time=currentDate - Date.now();
     const convertTime = convertMs(time);
     updateClockFace(convertTime);
     
@@ -37,7 +37,7 @@ const options = {
     minuteIncrement: 1,
     
     onClose(selectedDates) {
-      if(selectedDates[0]<Date.now()){
+      if(selectedDates[0] < Date.now()){
         alert('Please choose a date in the future"');
       };
     },
