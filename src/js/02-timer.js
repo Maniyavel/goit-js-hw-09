@@ -1,7 +1,7 @@
 import flatpickr from "flatpickr";
 import "flatpickr/dist/flatpickr.min.css";
 
-const input=document.querySelector('.datetime-picker');
+const input=document.querySelector('#datetime-picker');
 const button=document.querySelector('[data-start]');
 const dataDays=document.querySelector('[data-days]');
 const dataHours=document.querySelector('[data-hours]');
@@ -16,7 +16,7 @@ button.addEventListener('click', onClick);
 
 const onClick=()=>{
   intervalId=setInterval(()=>{
-    const currentTime=new Date();
+    const currentTime=new Date(input.value);
     const time=currentTime-Date.now();
     const convertTime = convertMs(time);
     updateClockFace(convertTime);
