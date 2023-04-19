@@ -9,11 +9,6 @@ const dataMinutes=document.querySelector('[data-minutes]');
 const dataSeconds=document.querySelector('[data-seconds]');
 let intervalId = null;
 
-
-
-
-
-
 const onStart=()=>{
   intervalId=setInterval(()=>{
     const currentDate=new Date(input.value);
