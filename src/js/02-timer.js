@@ -9,7 +9,7 @@ const dataMinutes=document.querySelector('[data-minutes]');
 const dataSeconds=document.querySelector('[data-seconds]');
 let intervalId = null;
 
-button.setAttribute('disabled', 'disabled');
+
 
 
 
