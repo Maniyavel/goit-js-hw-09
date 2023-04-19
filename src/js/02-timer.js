@@ -10,11 +10,11 @@ const dataSeconds=document.querySelector('[data-seconds]');
 let intervalId = null;
 
 button.setAttribute('disabled', 'disabled');
-button.addEventListener('click', onPress);
 
 
 
-const onPress=()=>{
+
+const onStart=()=>{
   intervalId=setInterval(()=>{
     const currentDate=new Date(input.value);
     const time=currentDate - Date.now();
@@ -52,6 +52,8 @@ const options = {
   };
 
   flatpickr(input, options);
+
+  button.addEventListener('click', onStart);
 
   function convertMs(ms) {
     const second = 1000;
