@@ -16,11 +16,11 @@ button.addEventListener('click', onClick);
 
 const onClick=()=>{
   intervalId=setInterval(()=>{
-    const currentTime=new Date(input.value);
-    const time=currentTime-Date.now();
+    const currentDate=new Date(input.value);
+    const time=currentDate-Date.now();
     const convertTime = convertMs(time);
     updateClockFace(convertTime);
-    // console.log(convertTime);
+    
     if (time <= 1000) {
       clearInterval(intervalId);
     }
@@ -65,5 +65,14 @@ const options = {
   
     return { days, hours, minutes, seconds };
   }
+
+  function addZero(value) {
+    return String(value).padStart(2, '0');
+  }
   
-  
+  function updateClockFace({ days, hours, minutes, seconds }) {
+    dataDays.textContent = addZero(days);
+    dataHours.textContent = addZero(hours);
+    dataMinutes.textContent = addZero(minutes);
+    dataSeconds.textContent = addZero(seconds);
+  }
