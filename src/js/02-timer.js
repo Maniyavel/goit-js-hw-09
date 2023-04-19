@@ -11,14 +11,19 @@ let intervalId = null;
 
 button.setAttribute('disabled', 'disabled');
 button.addEventListener('click', onClick);
-flatpickr(input, options);
+
 
 
 const onClick=()=>{
   intervalId=setInterval(()=>{
     const currentTime=new Date();
     const time=currentTime-Date.now();
-   
+    const convertTime = convertMs(time);
+    updateClockFace(convertTime);
+    // console.log(convertTime);
+    if (time <= 1000) {
+      clearInterval(intervalId);
+    }
   }, 1000);
 
   button.setAttribute('disabled', 'disabled');
@@ -45,6 +50,8 @@ const options = {
       }
     }
   };
+
+  flatpickr(input, options);
 
   function convertMs(ms) {
     const second = 1000;
