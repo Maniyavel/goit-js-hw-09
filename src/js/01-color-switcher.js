@@ -14,7 +14,7 @@ function getRandomHexColor() {
 
   
 const onColor=()=>{
-const intervalId=setInterval(()=>{
+const interval=setInterval(()=>{
     refs.body.style.background=getRandomHexColor();
     },1000);
 startButton.setAttribute('disabled', 'disabled');
@@ -28,4 +28,4 @@ const offColor=()=>{
 };
 
 refs.startButton.addEventListener('click', onColor);
-  refs.stopButton.addEventListener('click', offColor);
+refs.stopButton.addEventListener('click', offColor);
