@@ -12,19 +12,20 @@ function getRandomHexColor() {
       .padStart(6, 0)}`;
   }
 
-  refs.startButton.addEventListener('click', onColor);
-  refs.stopButton.addEventListener('click', offColor);
-
+  
 const onColor=()=>{
 const intervalId=setInterval(()=>{
     refs.body.style.background=getRandomHexColor();
     },1000);
 startButton.setAttribute('disabled', 'disabled');
 stopButton.removeAttribute('disabled');
-}
+};
 
 const offColor=()=>{
     startButton.removeAttribute('disabled');
     stopButton.setAttribute('disabled', 'disabled');
     clearInterval(interval);
 };
+
+refs.startButton.addEventListener('click', onColor);
+  refs.stopButton.addEventListener('click', offColor);
