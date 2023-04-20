@@ -4,7 +4,7 @@ const refs={
     body:document.querySelector('body')
 }
  
-let interval=null;
+let intervalId=null;
 
 function getRandomHexColor() {
     return `#${Math.floor(Math.random() * 16777215)
@@ -14,7 +14,7 @@ function getRandomHexColor() {
 
   
 const onColor=()=>{
- interval=setInterval(()=>{
+ intervalId=setInterval(()=>{
     refs.body.style.background=getRandomHexColor();
     },1000);
 startButton.setAttribute('disabled', 'disabled');
@@ -24,7 +24,7 @@ stopButton.removeAttribute('disabled');
 const offColor=()=>{
     startButton.removeAttribute('disabled');
     stopButton.setAttribute('disabled', 'disabled');
-    clearInterval(interval);
+    clearInterval(intervalId);
 };
 
 refs.startButton.addEventListener('click', onColor);

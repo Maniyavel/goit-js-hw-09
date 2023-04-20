@@ -63,13 +63,13 @@ const options = {
     return { days, hours, minutes, seconds };
   }
 
-  function addZero(value) {
+  function pad(value) {
     return String(value).padStart(2, '0');
   }
   
   function updateClockFace({ days, hours, minutes, seconds }) {
-    dataDays.textContent = addZero(days);
-    dataHours.textContent = addZero(hours);
-    dataMinutes.textContent = addZero(minutes);
-    dataSeconds.textContent = addZero(seconds);
+    dataDays.textContent = pad(days);
+    dataHours.textContent = pad(hours);
+    dataMinutes.textContent = pad(minutes);
+    dataSeconds.textContent = pad(seconds);
   }
