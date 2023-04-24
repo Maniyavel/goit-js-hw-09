@@ -3,10 +3,10 @@ form.addEventListener('submit', onsubmit );
 
 function onsubmit(evt){
   evt.preventDefault();
-  let.amount=form.amount.value;
-  let.delay=form.delay.value;
+  let amount=form.amount.value;
+  let delay=form.delay.value;
   delay=Number(delay);
-  let.step=form.step.value;
+  let step=form.step.value;
   step=Number(step);
  
 
