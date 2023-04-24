@@ -2,14 +2,13 @@ const form=document.querySelector('.form');
 form.addEventListener('submit', onSubmit );
 
 function createPromise(position, delay) {  
-  return new Promise((res, rej)=>{
+  return new Promise((resolve, reject)=>{
   const shouldResolve = Math.random() > 0.3;
 setTimeout(()=>{
   if (shouldResolve) {
-  res({position, delay});
-} else {
-   rej({position, delay});
-}}, delay);
+  resolve({position, delay});
+} reject({position, delay});
+}, delay);
 });}
 
 
@@ -23,7 +22,7 @@ const delayAll=Number(delay.value)+step.value*i;
 
 createPromise(position, delayAll)
   .then(({ position, delay }) => {
-    console.log (`✅ Fulfilled promise ${position} in ${delay}ms`);
+    console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
   })
   .catch(({ position, delay }) => {
     console.log(`❌ Rejected promise ${position} in ${delay}ms`);
