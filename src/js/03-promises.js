@@ -23,10 +23,10 @@ const delayAll=Number(delay.value)+step.value*i;
 
 createPromise(position, delayAll)
   .then(({ position, delay }) => {
-    return(`✅ Fulfilled promise ${position} in ${delay}ms`);
+    console.log (`✅ Fulfilled promise ${position} in ${delay}ms`);
   })
   .catch(({ position, delay }) => {
-    return (`❌ Rejected promise ${position} in ${delay}ms`);
+    console.log(`❌ Rejected promise ${position} in ${delay}ms`);
   });
 }
 
