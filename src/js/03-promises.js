@@ -18,9 +18,9 @@ function onSubmit(evt){
  
 
   for(let i=0, position=1; i<=amount.value; i+=1, position+=1){
-const delayAll=Number(delay.value)+step.value*i;
+const delaySum=Number(delay.value)+step.value*i;
 
-createPromise(position, delayAll)
+createPromise(position, delaySum)
   .then(({ position, delay }) => {
     console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
   })
