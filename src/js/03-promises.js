@@ -17,7 +17,7 @@ function onSubmit(evt){
   const{delay, step, amount}=evt.currentTarget.elements;
  
 
-  for(let i=1,  i<=amount.value; i+=1){
+  for(let i=1; i<=amount.value; i+=1){
 const delaySum=Number(delay.value)+step.value*i;
 
 createPromise(i, delaySum)
