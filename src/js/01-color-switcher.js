@@ -17,13 +17,13 @@ const onColor=()=>{
  intervalId=setInterval(()=>{
     refs.body.style.background=getRandomHexColor();
     },1000);
-startButton.setAttribute('disabled', 'disabled');
-stopButton.removeAttribute('disabled');
+refs.startButton.setAttribute('disabled', 'disabled');
+refs.stopButton.removeAttribute('disabled');
 };
 
 const offColor=()=>{
-    startButton.removeAttribute('disabled');
-    stopButton.setAttribute('disabled', 'disabled');
+    refs.startButton.removeAttribute('disabled');
+    refs.stopButton.setAttribute('disabled', 'disabled');
     clearInterval(intervalId);
 };
 
